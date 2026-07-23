@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Run Backend",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "backend.main",
+            "cwd": "C:\\MAIN\\DEV\\Projects\\logistics",
+            "console": "integratedTerminal"
+        }
+    ]
+}
