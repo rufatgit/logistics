@@ -1,0 +1,43 @@
+.offer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 40px;
+  margin-top: 40px;
+  border-top: 1px solid var(--color-border);
+}
+
+.offer-form-row {
+  display: flex;
+  gap: 24px;
+}
+
+.offer-form-row .input-group {
+  flex: 1;
+}
+
+.offer-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+.offer-checkbox input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-dark);
+}
+
+.offer-form .btn {
+  align-self: flex-start;
+}
+
+@media (max-width: 600px) {
+  .offer-form-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+}

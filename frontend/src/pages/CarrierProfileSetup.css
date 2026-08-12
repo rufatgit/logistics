@@ -1,0 +1,6 @@
+/* Reuses .shipment-form / .shipment-form-row from ShipmentForm.css conventions,
+   this file just covers anything specific to this page */
+
+.empty-state {
+  max-width: 480px;
+}

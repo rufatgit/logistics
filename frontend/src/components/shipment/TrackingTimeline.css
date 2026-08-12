@@ -1,0 +1,80 @@
+.tracking-section {
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid var(--color-border);
+}
+
+.tracking-timeline {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+.tracking-item {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 28px;
+  position: relative;
+}
+
+.tracking-item:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 14px;
+  bottom: 0;
+  width: 1px;
+  background-color: var(--color-border);
+}
+
+.tracking-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-text);
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.tracking-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.tracking-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.tracking-status {
+  font-size: 15px;
+  text-transform: capitalize;
+}
+
+.tracking-time {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.tracking-location {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.tracking-note {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin: 4px 0 0;
+}
+
+@media (max-width: 600px) {
+  .tracking-row {
+    flex-direction: column;
+    gap: 2px;
+  }
+}

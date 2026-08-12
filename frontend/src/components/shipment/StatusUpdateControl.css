@@ -1,0 +1,26 @@
+.status-control {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+}
+
+.status-note-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  padding: 8px 0;
+  font-size: 14px;
+  color: var(--color-text);
+  outline: none;
+}
+
+.status-note-input:focus {
+  border-bottom-color: var(--color-text);
+}
+
+.status-control .btn {
+  align-self: flex-start;
+}

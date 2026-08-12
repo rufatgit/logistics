@@ -1,0 +1,35 @@
+.admin-carrier-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-carrier-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.admin-carrier-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-carrier-name {
+  font-size: 16px;
+}
+
+.admin-carrier-vat {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 600px) {
+  .admin-carrier-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

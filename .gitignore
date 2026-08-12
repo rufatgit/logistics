@@ -231,3 +231,10 @@ node_modules/
 dist/
 build/
 npm-debug.log*
+
+
+# Logistics Project Specifics
+backend/env/
+.env*
+
+

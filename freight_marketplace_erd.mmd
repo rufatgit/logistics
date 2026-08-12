@@ -1,0 +1,124 @@
+erDiagram
+  USERS ||--o{ SHIPMENTS : creates
+  USERS ||--o| CARRIERS : "is (if role=carrier)"
+  USERS ||--o{ MESSAGES : sends
+  USERS ||--o{ DISPUTES : raises
+  CARRIERS ||--o{ DRIVERS : employs
+  CARRIERS ||--o{ VEHICLES : owns
+  CARRIERS ||--o{ OFFERS : submits
+  CARRIERS ||--o{ RATINGS : receives
+  SHIPMENTS ||--o{ SHIPMENT_PHOTOS : has
+  SHIPMENTS ||--o{ OFFERS : receives
+  SHIPMENTS ||--|| TRIPS : fulfilled_by
+  SHIPMENTS ||--o{ MESSAGES : contains
+  SHIPMENTS ||--o| PAYMENTS : paid_via
+  SHIPMENTS ||--o| RATINGS : rated_in
+  SHIPMENTS ||--o{ DISPUTES : subject_of
+  OFFERS ||--o| TRIPS : accepted_as
+  DRIVERS ||--o{ TRIPS : assigned_to
+  VEHICLES ||--o{ TRIPS : assigned_to
+  TRIPS ||--o{ TRACKING_UPDATES : logs
+
+  USERS {
+    uuid id PK
+    string name
+    string email
+    string password_hash
+    string role
+    string phone
+    datetime created_at
+  }
+  CARRIERS {
+    uuid id PK
+    uuid user_id FK
+    string company_name
+    string verification_status
+    float rating_avg
+  }
+  DRIVERS {
+    uuid id PK
+    uuid carrier_id FK
+    string name
+    string license_no
+    string phone
+  }
+  VEHICLES {
+    uuid id PK
+    uuid carrier_id FK
+    string type
+    float capacity_kg
+    string plate_number
+  }
+  SHIPMENTS {
+    uuid id PK
+    uuid customer_id FK
+    string pickup_location
+    string delivery_location
+    string cargo_type
+    float weight_kg
+    float volume_m3
+    date pickup_date
+    string status
+    datetime created_at
+  }
+  SHIPMENT_PHOTOS {
+    uuid id PK
+    uuid shipment_id FK
+    string url
+  }
+  OFFERS {
+    uuid id PK
+    uuid shipment_id FK
+    uuid carrier_id FK
+    decimal price
+    int delivery_days
+    string truck_type
+    bool insurance_included
+    string status
+  }
+  TRIPS {
+    uuid id PK
+    uuid shipment_id FK
+    uuid offer_id FK
+    uuid driver_id FK
+    uuid vehicle_id FK
+    string status
+  }
+  TRACKING_UPDATES {
+    uuid id PK
+    uuid trip_id FK
+    string status
+    string location
+    datetime timestamp
+  }
+  PAYMENTS {
+    uuid id PK
+    uuid shipment_id FK
+    decimal amount
+    string method
+    string status
+    datetime paid_at
+  }
+  MESSAGES {
+    uuid id PK
+    uuid shipment_id FK
+    uuid sender_id FK
+    string message_text
+    datetime sent_at
+  }
+  RATINGS {
+    uuid id PK
+    uuid shipment_id FK
+    uuid carrier_id FK
+    uuid customer_id FK
+    int score
+    string comment
+  }
+  DISPUTES {
+    uuid id PK
+    uuid shipment_id FK
+    uuid raised_by FK
+    uuid admin_id FK
+    string description
+    string status
+  }

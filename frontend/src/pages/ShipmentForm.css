@@ -1,0 +1,32 @@
+.shipment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  max-width: 640px;
+}
+
+.shipment-form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.shipment-form-row {
+  display: flex;
+  gap: 24px;
+}
+
+.shipment-form-row .input-group {
+  flex: 1;
+}
+
+.shipment-form .btn {
+  align-self: flex-start;
+}
+
+@media (max-width: 600px) {
+  .shipment-form-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+}

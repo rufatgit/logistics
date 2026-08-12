@@ -1,0 +1,51 @@
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.input-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-secondary);
+}
+
+.input-field {
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  padding: 12px 0;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 300ms ease;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="20" viewBox="0 0 14 20"><rect x="2" y="0.5" width="10" height="1.5" rx="0.75" fill="%23171716"/><rect x="6.25" y="0.5" width="1.5" height="19" fill="%23171716"/><rect x="2" y="18" width="10" height="1.5" rx="0.75" fill="%23171716"/></svg>') 7 10, text;
+}
+
+.input-field:focus {
+  border-bottom-color: var(--color-text);
+}
+
+.input-field::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 1;
+}
+
+.input-field:-webkit-autofill,
+.input-field:-webkit-autofill:hover,
+.input-field:-webkit-autofill:focus,
+.input-field:-webkit-autofill:active {
+  -webkit-text-fill-color: var(--color-text) !important;
+  caret-color: var(--color-text) !important;
+  transition: background-color 9999s ease-in-out 0s;
+  box-shadow: 0 0 0 1000px var(--color-bg) inset;
+}
+
+.input-error {
+  border-bottom-color: #a33;
+}
+
+.input-error-text {
+  font-size: 12px;
+  color: #a33;
+}
