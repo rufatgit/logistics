@@ -1,0 +1,11 @@
+POSTGRE SQL
+
+Download pg admin4
+login postgres in bash terminal in your project root folder
+create database
+install database driver for fastapi to communicate
+Configure Environment Variables (.env) and create .env in project root file 
+Configure SQLAlchemy Engine (database.py)
+Register Models & Auto-Create Tables (main.py)
+Import all model definitions and create tables on startup
+Inspect Database in pgAdmin 4
